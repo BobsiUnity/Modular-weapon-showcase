@@ -16,7 +16,10 @@ namespace Magic.Modifiers
         
         public override void Modify(Projectile projectile)
         {
-            projectile.damage += damageModifier;
+            var baseDamage = projectile.BaseDamage;
+            baseDamage.damage += damageModifier;
+            projectile.BaseDamage = baseDamage;
+            
             projectile.speed += speedModifier;
         }
 

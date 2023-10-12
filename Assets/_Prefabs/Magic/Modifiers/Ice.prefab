@@ -48,5 +48,7 @@ MonoBehaviour:
     type: 3}
   staffFireEffect: {fileID: 592000674894354709, guid: 709a0fbb04f906849a6c9227b31a1e03,
     type: 3}
-  enemyModifier: {fileID: 1448293168152850129, guid: dff8a8dbf76bbfb43b1f6b312c31f4e4,
-    type: 3}
+  enemyModifier:
+    damage: 5
+    tickRate: 1
+    tickAmount: 3

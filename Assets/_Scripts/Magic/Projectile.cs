@@ -1,19 +1,19 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
+using Magic.Modifiers;
 using UnityEngine;
 
 namespace Magic
 {
     public class Projectile : MonoBehaviour
     {
-        public int damage;
         public float speed;
 
         [SerializeField] private float lifeTime = 5;
         private Transform _transform;
 
-        private List<EnemyModifier> _enemyModifiers = new List<EnemyModifier>();
+        private readonly List<IEnemyModifier> _enemyModifiers = new ();
+
+        public InstantDamage BaseDamage;
 
         private void Awake()
         {
@@ -31,25 +31,21 @@ namespace Magic
         
         private void OnTriggerEnter(Collider other)
         {
-            if (other.TryGetComponent(out Health health))
+            if (other.TryGetComponent(out ModifierConsumer consumer))
             {
-                health.TakeDamage(damage);
-                SetEnemyModifiers(health.gameObject);
+                consumer.ConsumeModifier(BaseDamage);
+                
+                for (var i = 0; i < _enemyModifiers.Count; i++)
+                {
+                    var mod = _enemyModifiers[i];
+                    consumer.ConsumeModifier(mod);
+                }
+
                 Destroy(gameObject);
             }
         }
 
-        private void SetEnemyModifiers(GameObject enemy)
-        {
-            foreach (var modifier in _enemyModifiers)
-            {
-                enemy.AddComponent(modifier.GetType());
-            }
-            
-            _enemyModifiers.Clear();
-        }
-
-        public void AddEnemyModifier(EnemyModifier modifier)
+        public void AddEnemyModifier(IEnemyModifier modifier)
         {
             _enemyModifiers.Add(modifier);
         }

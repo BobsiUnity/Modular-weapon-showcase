@@ -12,7 +12,7 @@ namespace Magic.Modifiers
         [SerializeField] private ParticleSystem projectileFireEffect;
         [SerializeField] private ParticleSystem staffFireEffect;
 
-        [SerializeField] private EnemyModifier enemyModifier;
+        [SerializeField] private DamageOverTime enemyModifier;
 
         public override void Modify(Projectile projectile)
         {
