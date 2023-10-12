@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6753772930264842131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 150082031391559990}
+  - component: {fileID: 4396311390186836537}
+  m_Layer: 0
+  m_Name: Weapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &150082031391559990
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753772930264842131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4396311390186836537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6753772930264842131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86c0a5ee9644cc488ae1c823e3044b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPrefabs:
+  - {fileID: 7633111716362776253, guid: 06aa67ee83ee5a1418bbd5eee4bcc330, type: 3}
+  - {fileID: 1235574453544029475, guid: 3de1a2f6abe79ea48bdfda09fdea9249, type: 3}
+  stockPrefabs:
+  - {fileID: 1907078828201068940, guid: ed819e705db5ff4429fe4411b5776fd7, type: 3}
+  - {fileID: -7027853583371644247, guid: 101835d5850e5124a8047ef434b4e890, type: 3}
+  scopePrefabs:
+  - {fileID: -6644183860252105445, guid: 0ea46d0b42d7d2242bdbf9a0862b7379, type: 3}
+  - {fileID: 5940658955112569176, guid: 677056ac18cac5845a51b8f53fe9dde5, type: 3}
+  pistolGripPrefabs:
+  - {fileID: -1903058582340830669, guid: 741334f51e068e14eacbd579d1c866e7, type: 3}
+  - {fileID: -1656965577712441899, guid: 61e0838d4e87fbe478dd6111c4b1281b, type: 3}
+  forwardGripPrefabs:
+  - {fileID: 3687375795048601584, guid: dd388feaf085f3f46aa7da0b026eaf3a, type: 3}
+  - {fileID: 4882512962592405914, guid: 1bc1a9c483e67fb4b98b5ce4f746c615, type: 3}
+  handguardPrefabs:
+  - {fileID: 2696074023356633436, guid: f1db437e979454443ab01ca82f1fe914, type: 3}
+  - {fileID: -4384548628135396937, guid: 4e64c2dfc4ae3114b8c59cd25141cc6d, type: 3}
+  muzzlePrefabs:
+  - {fileID: 1226464085513027374, guid: d28c1e18e872a4f4bb3abee818c60536, type: 3}
+  - {fileID: 7887709192236514208, guid: 74eabecc59b51a04bad153e7ba4a6024, type: 3}
