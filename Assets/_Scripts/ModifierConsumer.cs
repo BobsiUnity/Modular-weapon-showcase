@@ -10,6 +10,11 @@ public class ModifierConsumer : MonoBehaviour
     
     public void ConsumeModifier(IEnemyModifier modifier)
     {
+#if UNITY_EDITOR
+        if (!modifier.GetType().IsValueType)
+            throw new System.Exception("Modifier is not a value type");
+#endif
+        
         modifier.Initialized();
         m_enemyModifiers.Add(modifier);
     }
