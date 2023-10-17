@@ -3,37 +3,54 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Magic
+namespace Magic.Modifiers
 {
-    public class DamageOverTime : EnemyModifier
+    [Serializable]
+    public struct DamageOverTime : IEnemyModifier
     {
         public int damage;
         public float tickRate;
         public int tickAmount;
     
         private float _lastTickTime;
-
-        public override void Initialized()
+        
+        public void Initialized()
         {
             _lastTickTime = Time.time;
         }
 
-        public override void ModifierUpdate()
+        public bool ModifierUpdate(Health _enemyHealth)
         {
             if (_lastTickTime + tickRate < Time.time)
             {
                 _lastTickTime = Time.time;
                 tickAmount--;
-                DealDamage();
+                DealDamage(_enemyHealth);
 
                 if (tickAmount <= 0)
-                    Destroy(this);
+                    return false;
             }
+            
+            return true;
         }
 
-        private void DealDamage()
+        private void DealDamage(Health _enemyHealth)
         {
-            enemyHealth.TakeDamage(damage);
+            _enemyHealth.TakeDamage(damage);
+        }
+    }
+    
+    [Serializable]
+    public struct InstantDamage : IEnemyModifier
+    {
+        public int damage;
+    
+        public void Initialized() {}
+
+        public bool ModifierUpdate(Health _enemyHealth)
+        {
+            _enemyHealth.TakeDamage(damage);
+            return false;
         }
     }
 }
