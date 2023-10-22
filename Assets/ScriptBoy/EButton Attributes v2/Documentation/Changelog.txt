@@ -1,0 +1,11 @@
+Version 2.0.0
+- Changed all scripts
+- Changed folders structure
+- Added Assembly Definitions
+- Improved performance by caching
+
+Warning: Delete v1 before importing v2
+
+
+Version 1.0.1
+- Removed PackageManager dependencies

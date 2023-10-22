@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Sirenix.OdinInspector;
 using UnityEngine;
 
 namespace Magic
@@ -33,11 +32,9 @@ namespace Magic
         }
         
         //This is purely for testing of adding modifiers
-        [FoldoutGroup("Testing")]
         [SerializeField] private MagicModifier modifierToAdd;
 
-        [FoldoutGroup("Testing")]
-        [Button]
+        [EButton("Add Modifier")]
         private void AddTempModifier()
         {
             if (modifierToAdd == null)
@@ -46,8 +43,7 @@ namespace Magic
             modifierToAdd = null;
         }
 
-        [FoldoutGroup("Testing")]
-        [Button]
+        [EButton("Clear Modifiers")]
         private void ClearModifiers()
         {
             modifiers.Clear();
