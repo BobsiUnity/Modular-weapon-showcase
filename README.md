@@ -1,6 +1,6 @@
 # Modular-weapon-showcase
 ### This project is meant for learning and not meant for production use!
-This is made by [Bobsi on Youtube](https://www.youtube.com/@BobsiDev)
+This is made by [Bobsi on Youtube](https://www.youtube.com/@BobsiTutorial)
 
 Free assets used:
 - [Halloween Pumpkin by monsieurmo](https://sketchfab.com/3d-models/halloween-pumpkin-4484260f38114ad0b78da570afc5116c)
